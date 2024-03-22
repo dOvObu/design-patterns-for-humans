@@ -22,7 +22,7 @@
 |:-|:-|:-|
 |[Тупа Фабрика](#-simple-factory)|[Адаптер](#-adapter)|[Цепочка Ответственности](#-chain-of-responsibility)|
 |[Фабричныей Метод](#-factory-method)|[Мост](#-bridge)|[Команда](#-command)|
-|[~Абстрактная Фабрика~](#-abstract-factory)|[Композиция](#-composite)|[Итератор](#-iterator)|
+|[<i>Абстрактная Фабрика</i>](#-abstract-factory)|[Композиция](#-composite)|[Итератор](#-iterator)|
 |[Строитель](#-builder)|[Декоратор](#-decorator)|[Посредник](#-mediator)|
 |[Прототип](#-prototype)|[Фасад](#-facade)|[Сувенир](#-memento)|
 |[Мемный Синглтон](#-singleton)|[Легковес](#-flyweight)|[Наблюдатель](#-observer)|
