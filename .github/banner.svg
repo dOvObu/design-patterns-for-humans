@@ -1,17 +1,20 @@
-
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="200" viewBox="0 -110 1080 200" xml:space="preserve">
 <desc>Created with Fabric.js 5.2.4</desc>
 <defs>
 </defs>
-<g transform="matrix(1 0 0 1 540 540)" id="536bf168-1933-483a-9c5b-6973aec35be9"  >
-<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 100)" id="536bf168-1933-483a-9c5b-6973aec35be9"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  x="-540" y="-100" rx="0" ry="0" width="1080" height="200" />
 </g>
-<g transform="matrix(1 0 0 1 540 540)" id="b0e56f6f-1085-49e3-90bb-07dc31827b9d"  >
+<g transform="matrix(Infinity NaN NaN Infinity 0 0)" id="b0e56f6f-1085-49e3-90bb-07dc31827b9d"  >
 </g>
-<g transform="matrix(1 0 0 1 540 605.18)" style="" id="f1bf8c75-3656-4fa0-88b1-5d5f11f877ff"  >
+<g transform="matrix(15.71 -0.85 0.43 8 644.41 -34.33)" id="037cac0d-2a85-4d67-9611-b2739dc3f7ef"  >
+<circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  cx="0" cy="0" r="35" />
+</g>
+<g transform="matrix(0.43 0 0 0.37 540 -11.45)" style="" id="f1bf8c75-3656-4fa0-88b1-5d5f11f877ff"  >
 		<text xml:space="preserve" font-family="Raleway" font-size="105" font-style="normal" font-weight="900" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-273.63" y="-26.34" >ШаблОнЫ</tspan><tspan x="-486.2" y="92.31" >ПрОЕкТирОваНиЯ</tspan></text>
 </g>
-<g transform="matrix(0.99 0.12 -0.12 0.99 850.18 468.16)" style="" id="34ee7c33-b64b-4a77-830c-3be8520c5d7a"  >
-		<text xml:space="preserve" font-family="Lato" font-size="40" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-87.7" y="-7.77" >Д</tspan><tspan x="-60.81" y="-7.77" >л</tspan><tspan x="-41.25" y="-7.77" >я</tspan><tspan x="-23.25" y="-7.77" style="white-space: pre; "> </tspan><tspan x="-15.93" y="-7.77" >т</tspan><tspan x="0.62" y="-7.77" >у</tspan><tspan x="20.22" y="-7.77" >п</tspan><tspan x="41.22" y="-7.77" >ы</tspan><tspan x="67.7" y="-7.77" >х</tspan><tspan x="-52.86" y="32.91" >л</tspan><tspan x="-33.3" y="32.91" >ю</tspan><tspan x="-5.85" y="32.91" >д</tspan><tspan x="14.1" y="32.91" >е</tspan><tspan x="31.46" y="32.91" >й</tspan></text>
+<g transform="matrix(0.43 0.03 -0.06 0.39 713.52 -47.14)" style="" id="34ee7c33-b64b-4a77-830c-3be8520c5d7a"  >
+		<text xml:space="preserve" font-family="Lato" font-size="40" font-style="normal" font-weight="400" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-148.56" y="-7.77" >Д</tspan><tspan x="-121.68" y="-7.77" >л</tspan><tspan x="-102.12" y="-7.77" >я</tspan><tspan x="-84.12" y="-7.77" style="white-space: pre; "> </tspan><tspan x="-76.8" y="-7.77" >у</tspan><tspan x="-58.95" y="-7.77" >л</tspan><tspan x="-39.39" y="-7.77" >ь</tspan><tspan x="-23.08" y="-7.77" >т</tspan><tspan x="-5.51" y="-7.77" >р</tspan><tspan x="14.09" y="-7.77" >а</tspan><tspan x="31.45" y="-7.77" >-</tspan><tspan x="44.93" y="-7.77" >т</tspan><tspan x="61.48" y="-7.77" >у</tspan><tspan x="81.08" y="-7.77" >п</tspan><tspan x="102.09" y="-7.77" >ы</tspan><tspan x="128.56" y="-7.77" >х</tspan><tspan x="-52.86" y="32.91" >л</tspan><tspan x="-33.3" y="32.91" >ю</tspan><tspan x="-5.85" y="32.91" >д</tspan><tspan x="14.1" y="32.91" >е</tspan><tspan x="31.46" y="32.91" >й</tspan></text>
 </g>
 </svg>
