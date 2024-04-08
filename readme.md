@@ -20,7 +20,7 @@
 
 |[Шаблоны создания](#creational-design-patterns)|[Структурные](#structural-design-patterns)|[Поведенческие](#behavioral-design-patterns)|
 |:-|:-|:-|
-|[Тупа Фабрика](#-simple-factory)|[Адаптер](#-adapter)|[Цепочка Ответственности](#-chain-of-responsibility)|
+|[Тупа Фабрика](#-Тупа-Фабрика)|[Адаптер](#-adapter)|[Цепочка Ответственности](#-chain-of-responsibility)|
 |[Фабричныей Метод](#-factory-method)|[Мост](#-bridge)|[Команда](#-command)|
 |[<i>Абстрактная Фабрика</i>](#-abstract-factory)|[Композиция](#-composite)|[Итератор](#-iterator)|
 |[Строитель](#-builder)|[Декоратор](#-decorator)|[Посол](#-mediator)|
