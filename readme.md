@@ -36,22 +36,22 @@
 Введение
 =================
 
-Design patterns are solutions to recurring problems; **guidelines on how to tackle certain problems**. They are not classes, packages or libraries that you can plug into your application and wait for the magic to happen. These are, rather, guidelines on how to tackle certain problems in certain situations.
+Шаблоны проектирования — это решения повторяющихся проблем; **в виде рекомендаций, по решению**. Это не классы/пакеты/библиотеки/плагины в приложение, которые вы бы могли воткнуть в своё приложение и ожидать какой-то магии. Это именно рекомендации под некоторые проблемы в некоторых ситуациях.
 
-> Design patterns are solutions to recurring problems; guidelines on how to tackle certain problems
+> Шаблоны проектирования — это решения повторяющихся проблем, в виде рекомендаций.
 
 Википедия описывает их так:
 
-> In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations.
+> В разработке программного обеспечения шаблон проектирования ПО — это общее многократно используемое решение часто возникающей проблемы в заданном контексте проектирования программного обеспечения. Это не законченный проект, который можно преобразовать непосредственно в исходный или машинный код. Это описание или шаблон решения проблемы, который можно использовать в самых разных ситуациях.
 
 ⚠️ Осторожно
 -----------------
-- Design patterns are not a silver bullet to all your problems.
-- Do not try to force them; bad things are supposed to happen, if done so. 
-- Keep in mind that design patterns are solutions **to** problems, not solutions **finding** problems; so don't overthink.
-- If used in a correct place in a correct manner, they can prove to be a savior; or else they can result in a horrible mess of a code.
+- Шаблоны это не серебряная пуля.
+- Не пытайтесь впихивать их через силу — дела пойдут плохо. 
+- Шаблоны **решают** проблемы, а не **обозначивают** их; не перенапрягайтесь.
+- В уместных случаях помогают; в неуместных — превращают код в кашу.
 
-> Also note that the code samples below are in PHP-7, however this shouldn't stop you because the concepts are same anyways.
+> Примеры на PHP-7, но это не должно вызвать проблем, в любом случае, т.к. концепции одинаковые.
 
 Типы шаблонов
 -----------------
