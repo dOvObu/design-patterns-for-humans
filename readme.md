@@ -51,7 +51,7 @@
 - Шаблоны **решают** проблемы, а не **обозначивают** их; не перенапрягайтесь.
 - В уместных случаях помогают; в неуместных — превращают код в кашу.
 
-> Примеры на PHP-7, но это не должно вызвать проблем, в любом случае, т.к. концепции одинаковые.
+> Примеры на PHP-7, но это не должно вызвать проблем, т.к. концепции одинаковые.
 
 Типы шаблонов
 -----------------
@@ -63,8 +63,8 @@
 Шаблоны Создания
 ==========================
 
-Проще говоря
-> Creational patterns are focused towards how to instantiate an object or group of related objects.
+Попросту
+> это шаблоны нацеленные на создание экземпляров *объекта*, или *группы связанных объектов*
 
 Согласно Википедии
 > In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
