@@ -67,7 +67,7 @@
 > это шаблоны нацеленные на создание экземпляров *объекта*, или *группы связанных объектов*
 
 Согласно Википедии
-> In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+> В разработке ПО, "Шаблоны Создания" это шаблоны связанные с механизмами создания объектов подходящим образом в конкретной сетуации. Базовая форма создания объекта может привести к проблемам с проектированием или усложнить проект. "Шаблоны Создания" решают эту проблему, как-то управляя процессом создания.
 
  * [Тупа Фабрика](#-Тупа-Фабрика)
  * [Фабричныей Метод](#-Фабричныей-Метод)
@@ -79,17 +79,17 @@
 🏠 Тупа Фабрика
 --------------
 Пример из реального мира
-> Consider, you are building a house and you need doors. You can either put on your carpenter clothes, bring some wood, glue, nails and all the tools required to build the door and start building it in your house or you can simply call the factory and get the built door delivered to you so that you don't need to learn anything about the door making or to deal with the mess that comes with making it.
+> Предположим Вам нужна дверь. Можно претащить дерево, рабочую форму, клей, гвозди и инструменты необходимые для сборки двери, и собрать дверь самостоятельно. Хлопотно. Но есть и другой путь — обратиться к производителю дверей и заказать парочку. Этот вариант позволяет собрать дверь не вдаваясь в подробности о процессе сборки и не разбираясь с бардаком, который образуется в процессе сборки.
 
 Проще говоря
-> Simple factory simply generates an instance for client without exposing any instantiation logic to the client
+> "Тупа Фабрика" просто генерирует экземпляр для клиента, не раскрывая ему никакой логики создания экземпляра.
 
 Согласно Википедии
 > In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class from some method call, which is assumed to be "new".
 
 **Пример Кода**
 
-First of all we have a door interface and the implementation
+Для начала нам нужен интерфейс и реализация двери
 ```php
 interface Door
 {
@@ -119,7 +119,7 @@ class WoodenDoor implements Door
     }
 }
 ```
-Then we have our door factory that makes the door and returns it
+Далее, у нас есть дверная фабрика, которая создаёт дверь и возвращает её
 ```php
 class DoorFactory
 {
@@ -129,7 +129,7 @@ class DoorFactory
     }
 }
 ```
-And then it can be used as
+Затем, она может быть использована вот так:
 ```php
 // Make me a door of 100x200
 $door = DoorFactory::makeDoor(100, 200);
@@ -141,9 +141,9 @@ echo 'Height: ' . $door->getHeight();
 $door2 = DoorFactory::makeDoor(50, 100);
 ```
 
-**When to Use?**
+**Когда это Использовать?**
 
-When creating an object is not just a few assignments and involves some logic, it makes sense to put it in a dedicated factory instead of repeating the same code everywhere.
+Когда создание объекта состоит не просто из пары присвоений, а содержит какую-то логику. В таком случае есть смысл поместить это в специальную фабрику, вместо повторения этого кода из раза в раз.
 
 🏭 Фабричныей Метод
 --------------
@@ -229,7 +229,7 @@ $marketingManager = new MarketingManager();
 $marketingManager->takeInterview(); // Output: Asking about community building.
 ```
 
-**When to use?**
+**Когда это Использовать?**
 
 Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn't know what exact sub-class it might need.
 
@@ -354,7 +354,7 @@ $expert->getDescription(); // Output: I can only fit iron doors
 
 As you can see the wooden door factory has encapsulated the `carpenter` and the `wooden door` also iron door factory has encapsulated the `iron door` and `welder`. And thus it had helped us make sure that for each of the created door, we do not get a wrong fitting expert.   
 
-**When to use?**
+**Когда это Использовать?**
 
 When there are interrelated dependencies with not-that-simple creation logic involved
 
@@ -461,7 +461,7 @@ $burger = (new BurgerBuilder(14))
                     ->build();
 ```
 
-**When to use?**
+**Когда это Использовать?**
 
 When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
 
@@ -530,7 +530,7 @@ echo $cloned->getCategory(); // Mountain sheep
 
 Also you could use the magic method `__clone` to modify the cloning behavior.
 
-**When to use?**
+**Когда это Использовать?**
 
 When an object is required that is similar to existing object or when the creation would be expensive as compared to cloning.
 
