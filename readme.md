@@ -408,13 +408,13 @@ class Shava
     protected $lettuce = false;
     protected $tomato = false;
 
-    public function __construct(BurgerBuilder $builder)
+    public function __construct(ShavaBuilder $shava)
     {
-        $this->size = $builder->size;
-        $this->cheese = $builder->cheese;
-        $this->pepperoni = $builder->pepperoni;
-        $this->lettuce = $builder->lettuce;
-        $this->tomato = $builder->tomato;
+        $this->size = $shava->size;
+        $this->cheese = $shava->cheese;
+        $this->pepperoni = $shava->pepperoni;
+        $this->lettuce = $shava->lettuce;
+        $this->tomato = $shava->tomato;
     }
 }
 ```
@@ -460,16 +460,16 @@ class ShavaBuilder
         return $this;
     }
 
-    public function build(): Burger
+    public function build(): Shava
     {
-        return new Burger($this);
+        return new Shava($this);
     }
 }
 ```
 And then it can be used as:
 
 ```php
-$burger = (new BurgerBuilder(14))
+$shava = (new ShavaBuilder(14))
                     ->addPepperoni()
                     ->addLettuce()
                     ->addTomato()
