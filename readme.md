@@ -379,12 +379,12 @@ $expert->getDescription(); // Output: I can only fit iron doors
 > Представьте, что вы заказываете большую шавуху. Если бы шаурмист приготовил вам шавуху *безкаких каких-либо вопросов*, это был бы пример "Тупа Фабрики". Но, бывают случаи, когда в логике приготовления есть больше шагов. Например, у вас могут спросить, какой вы бы хотели хлеб? Лаваш или пита? Какой тип соуса — сметанный, гранатовый, карри? Какое наполнение (курица/фалафель/салат/салат с курицей)? Во таких случаях на помощь приходит шаблон "Строителя".
 
 Проще говоря
-> Allows you to create different flavors of an object while avoiding constructor pollution. Useful when there could be several flavors of an object. Or when there are a lot of steps involved in creation of an object.
+> Позволяет создавать разные типы объекта не загрязняя конструктор. Полезен, когда существует куча разновидностей объекта. Или, когда процесс создания включает несколько шагов.
 
 Согласно Википедии
-> The builder pattern is an object creation software design pattern with the intentions of finding a solution to the telescoping constructor anti-pattern.
+> Строитель это "Шаблон Создания", призванный избежать использования анти-шаблона "Телескопический Конструктор".
 
-Having said that let me add a bit about what telescoping constructor anti-pattern is. At one point or the other we have all seen a constructor like below:
+Вот пример "Телескопического Конструктора":
 
 ```php
 public function __construct($size, $cheese = true, $pepperoni = true, $tomato = false, $lettuce = true)
@@ -392,11 +392,13 @@ public function __construct($size, $cheese = true, $pepperoni = true, $tomato = 
 }
 ```
 
-As you can see; the number of constructor parameters can quickly get out of hand and it might become difficult to understand the arrangement of parameters. Plus this parameter list could keep on growing if you would want to add more options in future. This is called telescoping constructor anti-pattern.
+Как вы видите, количество параметров может очень быстро разростись и это может усложнить понимание расположеня параметров. Кроме того, число параметров может ещё сильно вырости при добавлении новых опций.
+
 
 **Пример Кода**
 
-The sane alternative is to use the builder pattern. First of all we have our burger that we want to make
+Разумнее использовать шаблон "Строитель".
+Вот у нас есть шавуха:
 
 ```php
 class Shava
@@ -419,7 +421,7 @@ class Shava
 }
 ```
 
-And then we have the builder
+А вот шаурмист:
 
 ```php
 class ShavaBuilder
@@ -466,7 +468,7 @@ class ShavaBuilder
     }
 }
 ```
-And then it can be used as:
+И вот так это может быть использовано:
 
 ```php
 $shava = (new ShavaBuilder(14))
@@ -478,15 +480,15 @@ $shava = (new ShavaBuilder(14))
 
 **Когда это Использовать?**
 
-When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
+Когда могут быть разные виды объекта и надо избежать "Телескопического Конструктора". Ключевое отличие от "Тупа Фабрики" в том, что просто создание это процесс в один шаг, в то время как "Строитель" подходит под многоэтапный процесс.
 
 🐑 Прототип
 ------------
 Пример из реального мира
-> Remember dolly? The sheep that was cloned! Lets not get into the details but the key point here is that it is all about cloning
+> Помните Долли? Эту овцу клонировали! Давайте не вдаваться в детали, суть в том, что этот шаблон про клонирование
 
 Проще говоря
-> Create object based on an existing object through cloning.
+> Создание объекта из уже существуещего через клонирование.
 
 Согласно Википедии
 > The prototype pattern is a creational design pattern in software development. It is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects.
