@@ -152,17 +152,17 @@ $door2 = DoorFactory::makeDoor(50, 100);
 --------------
 
 Пример из реального мира
-> Consider the case of a hiring manager. It is impossible for one person to interview for each of the positions. Based on the job opening, she has to decide and delegate the interview steps to different people.
+> Предстевьте себе кадровика. Невозможно одному человеку проводить интервью для всех позиций. В зависимости от позиции, кадровику приходится выбрать и отдать некоторые этапы интервью всяким экспертам.
 
 Проще говоря
-> It provides a way to delegate the instantiation logic to child classes.
+> Позволяет делегировать логику создания наследникам.
 
 Согласно Википедии
-> In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+> В ооп, "Фабричный Метод" это "Шаблон Создания" который использует фабричные методы для решения проблемы с созданием объектов без указания конкретного класса объекта, который будет создан. Этого добиваются вызывая метод, который либо объявлен в интерфейсе и определён в реализациях, либо реализован в базовом классе и перегружен в наследниках, вместо того чтоб создавать объект через конструктор.
 
  **Пример Кода**
 
-Taking our hiring manager example above. First of all we have an interviewer interface and some implementations for it
+Возьмём пример с кадровиком выше. В первую очередь, нам понадобится интерфейс интервьюера и пара реализаций
 
 ```php
 interface Interviewer
@@ -187,7 +187,7 @@ class CommunityExecutive implements Interviewer
 }
 ```
 
-Now let us create our `HiringManager`
+Теперь, давайте опишем нашего `Кадровика`
 
 ```php
 abstract class HiringManager
@@ -204,7 +204,7 @@ abstract class HiringManager
 }
 
 ```
-Now any child can extend it and provide the required interviewer
+Теперь, все потомки могут расширить понятие "кадровика", возвращая необходимого интервьюера
 ```php
 class DevelopmentManager extends HiringManager
 {
@@ -222,7 +222,7 @@ class MarketingManager extends HiringManager
     }
 }
 ```
-and then it can be used as
+и теперь это может быть использовано вот так:
 
 ```php
 $devManager = new DevelopmentManager();
@@ -234,23 +234,29 @@ $marketingManager->takeInterview(); // Output: Asking about community building.
 
 **Когда это Использовать?**
 
-Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn't know what exact sub-class it might need.
+Это полезно, когда имеет место работа одного рода, но с динамически выбираемым подклассом. Другими словами, когда клиент не знает какой именно подкласс ему может понадобиться.
 
 🔨 <i>Абстрактная Фабрика</i>
 ----------------
 
 Пример из реального мира
-> Extending our door example from Simple Factory. Based on your needs you might get a wooden door from a wooden door shop, iron door from an iron shop or a PVC door from the relevant shop. Plus you might need a guy with different kind of specialities to fit the door, for example a carpenter for wooden door, welder for iron door etc. As you can see there is a dependency between the doors now, wooden door needs carpenter, iron door needs a welder etc.
+> Расширяя пример с дверьми из "Тупа Фабрики", заметим, что нам может понадобиться
+>- деревянная дверь из магазина деревянных дверей
+>- железная, из магазина железных дверей
+>- ПВХ дверь из соответствующего магазина, и т.д.
+> Кроме того, может понадобиться соответствующий эксперт для установки двери:
+>- плотник для деревянной
+>- сварщик для железной, и т.д.
 
 Проще говоря
-> A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
+> Фабрика фабрик; фабрика, которая группирует набор родственных, но индивидуальных фабрик вместе, без упоминания конкретных классов.
 
 Согласно Википедии
-> The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes
+> <i>"Абстрактная Фабрика"</i> предоставляет возможность инкапсулировать группу индивидуальных фабрик связанныз общей темой, без упоминания конкретных классов.
 
 **Пример Кода**
 
-Translating the door example above. First of all we have our `Door` interface and some implementation for it
+Перенося на двери из примера выше, сначала, всё что у нас есть это интерфейс `Door` и пара его реализаций
 
 ```php
 interface Door
@@ -274,7 +280,7 @@ class IronDoor implements Door
     }
 }
 ```
-Then we have some fitting experts for each door type
+Далее, у нас есть несколько экспертов по установке для каждого типа двери (плотник и сварщик)
 
 ```php
 interface DoorFittingExpert
@@ -299,7 +305,9 @@ class Carpenter implements DoorFittingExpert
 }
 ```
 
-Now we have our abstract factory that would let us make family of related objects i.e. wooden door factory would create a wooden door and wooden door fitting expert and iron door factory would create an iron door and iron door fitting expert
+Далее, у нас идёт "Абстрактная Фабрика", которая позволяет нам выделить группы родственных объектов:
+- деревянная дверь и плотник
+- железная дверь и сварщик
 ```php
 interface DoorFactory
 {
@@ -335,7 +343,7 @@ class IronDoorFactory implements DoorFactory
     }
 }
 ```
-And then it can be used as
+И теперь это может быть использовано так:
 ```php
 $woodenFactory = new WoodenDoorFactory();
 
@@ -354,17 +362,21 @@ $expert = $ironFactory->makeFittingExpert();
 $door->getDescription();  // Output: I am an iron door
 $expert->getDescription(); // Output: I can only fit iron doors
 ```
+Как вы можете видеть:
+- фабрика деревянных дверей инкапсулирует `carpenter` (плотника) и `wooden door`
+- фабрика железных дверей инкапсулирует `welder` (сварщика) и `iron door`
 
-As you can see the wooden door factory has encapsulated the `carpenter` and the `wooden door` also iron door factory has encapsulated the `iron door` and `welder`. And thus it had helped us make sure that for each of the created door, we do not get a wrong fitting expert.   
+И это вселяет в нас уверенность, что используя одну фабрику, для каждой созданной двери мы получим соответствующего эксперта.
 
 **Когда это Использовать?**
 
-When there are interrelated dependencies with not-that-simple creation logic involved
+Когда есть взаимосвязанные зависимости со сложной логикой создания
 
 👷 Строитель
 --------------------------------------------
 Пример из реального мира
-> Imagine you are at Hardee's and you order a specific deal, lets say, "Big Hardee" and they hand it over to you without *any questions*; this is the example of simple factory. But there are cases when the creation logic might involve more steps. For example you want a customized Subway deal, you have several options in how your burger is made e.g what bread do you want? what types of sauces would you like? What cheese would you want? etc. In such cases builder pattern comes to the rescue.
+
+> Представьте, что вы заказываете большую шавуху. Если бы шаурмист приготовил вам шавуху *безкаких каких-либо вопросов*, это был бы пример "Тупа Фабрики". Но, бывают случаи, когда в логике приготовления есть больше шагов. Например, у вас могут спросить, какой вы бы хотели хлеб? Лаваш или пита? Какой тип соуса — сметанный, гранатовый, карри? Какое наполнение (курица/фалафель/салат/салат с курицей)? Во таких случаях на помощь приходит шаблон "Строителя".
 
 Проще говоря
 > Allows you to create different flavors of an object while avoiding constructor pollution. Useful when there could be several flavors of an object. Or when there are a lot of steps involved in creation of an object.
@@ -387,7 +399,7 @@ As you can see; the number of constructor parameters can quickly get out of hand
 The sane alternative is to use the builder pattern. First of all we have our burger that we want to make
 
 ```php
-class Burger
+class Shava
 {
     protected $size;
 
@@ -410,7 +422,7 @@ class Burger
 And then we have the builder
 
 ```php
-class BurgerBuilder
+class ShavaBuilder
 {
     public $size;
 
