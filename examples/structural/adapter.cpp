@@ -2,6 +2,7 @@
 #include <string>
 
 
+// например api opengl или directx
 struct adaptee
 {
   void log_int(int num)
@@ -11,6 +12,7 @@ struct adaptee
 };
 
 
+// например разные адаптеры к api разных библиотек
 struct i_adapter
 {
   virtual void print(std::string text) = 0;
@@ -28,6 +30,7 @@ private:
 };
 
 
+// например движок
 struct client
 {
   i_adapter* logger = nullptr;
@@ -43,9 +46,10 @@ struct client
 int main()
 {
   i_adapter* l = new adapter();
-  client cl;
   
+  client cl;
   cl.logger = l;
+  
   cl.update_with("42");
 
   return 0;
