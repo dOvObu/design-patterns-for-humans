@@ -10,6 +10,7 @@ struct adaptee
   }
 };
 
+
 struct i_adapter
 {
   virtual void print(std::string text) = 0;
@@ -19,14 +20,13 @@ struct adapter : public i_adapter
 {
   void print(std::string text) override
   {
-    if (isdigit(text[0]))
-    {
-      logger.log_int(atoi(text.c_str()));
-    }
+    if (!isdigit(text[0])) return;
+    logger.log_int(atoi(text.c_str()));
   }
 private:
   adaptee logger;
 };
+
 
 struct client
 {
