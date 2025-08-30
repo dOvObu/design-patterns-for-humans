@@ -31,7 +31,7 @@ private:
 
 
 // например движок
-struct client
+struct target
 {
   i_adapter* logger = nullptr;
   
@@ -47,10 +47,10 @@ int main()
 {
   i_adapter* l = new adapter();
   
-  client cl;
-  cl.logger = l;
+  target client;
+  client.logger = l;
   
-  cl.update_with("42");
+  client.update_with("42");
 
   return 0;
 }
