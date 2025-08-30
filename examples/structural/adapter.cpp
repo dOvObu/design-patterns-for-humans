@@ -48,7 +48,7 @@ int main()
   i_adapter* l = new adapter();
   
   target client;
-  client.logger = l;
+  client.logger = l; // с подключением :)
   
   client.update_with("42");
 
