@@ -1,5 +1,6 @@
 using System;
 
+
 class LegacyRect
 {
   float _left;
@@ -20,19 +21,22 @@ class LegacyRect
     Console.Log($"left: {_left}, right: {_right}, top: {_top}, bottom: {_bottom}");
   }
 }
+// ...
 
 
 interface IRect
 {
   void Move(int x, int y);
-  void Log();
+  void Print();
 }
 
 class GameEngine(IRect rect)
 { 
   public Update()
   {
+    rect.Print();
     rect.Move(4, 2);
+    rect.Print();
   }
 }
 
@@ -47,11 +51,12 @@ class LegacyRectAdapter : IRect
     _rect.Shift(0.5f * x, 0.5f * y);
   }
 
-  public void Log()
+  public void Print()
   {
     _rect.Show();
   }
 }
+// ...
 
 
 
