@@ -9,7 +9,7 @@ struct adaptee1
   {
     std::cout << "num: " << num << std::endl; 
   }
-};
+}; // ...
 
 
 // клиентский код, например движок
@@ -40,7 +40,7 @@ struct adapter : public i_target
   }
 private:
   adaptee1 logger;
-};
+}; // ...
 
 
 int main()
