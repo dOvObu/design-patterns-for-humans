@@ -31,7 +31,7 @@ struct target
 
 
 // разные адаптеры, например к api opengl и directx
-struct adapter1 : public i_target
+struct adapter : public i_target
 {
   void print(std::string text) override
   {
@@ -45,7 +45,7 @@ private:
 
 int main()
 {
-  i_target* l = new adapter1();
+  i_target* l = new adapter();
   
   target client;
   client.logger = l; // с подключением :)
